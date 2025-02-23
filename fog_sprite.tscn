@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://bf5q0rvr8noi7"]
+
+[ext_resource type="Script" path="res://fog_sprite.gd" id="1_7yt35"]
+
+[sub_resource type="Gradient" id="Gradient_30o64"]
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4o3bn"]
+seed = 1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yeupl"]
+color_ramp = SubResource("Gradient_30o64")
+noise = SubResource("FastNoiseLite_4o3bn")
+
+[node name="FogSprite" type="Sprite2D"]
+texture = SubResource("NoiseTexture2D_yeupl")
+script = ExtResource("1_7yt35")

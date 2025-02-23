@@ -1,0 +1,178 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8nosauy60ouu"]
+
+[ext_resource type="Texture2D" uid="uid://dtchceogi31lu" path="res://beach_background_1.png" id="1_iwpfp"]
+[ext_resource type="PackedScene" uid="uid://blq7g265syhtj" path="res://fog_particles.tscn" id="1_vwnpy"]
+[ext_resource type="PackedScene" uid="uid://bf5q0rvr8noi7" path="res://fog_sprite.tscn" id="2_w3uwt"]
+
+[node name="FogLayers" type="Node2D"]
+
+[node name="BeachBG" type="Sprite2D" parent="."]
+texture = ExtResource("1_iwpfp")
+centered = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 540)
+
+[node name="FogSprite" parent="Camera2D" instance=ExtResource("2_w3uwt")]
+scale = Vector2(8, 8)
+speed = 0.5
+fog_seed = 12
+
+[node name="FogSprite2" parent="Camera2D" instance=ExtResource("2_w3uwt")]
+rotation = 1.5708
+scale = Vector2(4, 4)
+speed = 2.0
+fog_seed = 100
+
+[node name="FogParticles" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+
+[node name="FogParticles2" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(-156, 8)
+
+[node name="FogParticles3" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(-300, 76)
+
+[node name="FogParticles4" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(-300, 220)
+
+[node name="FogParticles5" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(-133, 149)
+
+[node name="FogParticles6" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(28, 146)
+
+[node name="FogParticles7" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(152, -29)
+
+[node name="FogParticles8" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(186, 146)
+
+[node name="FogParticles9" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(299, -41)
+
+[node name="FogParticles10" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(361, 117)
+
+[node name="FogParticles11" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(454, -81)
+
+[node name="FogParticles12" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(525, 94)
+
+[node name="FogParticles13" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(632, -124)
+
+[node name="FogParticles14" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(703, 49)
+
+[node name="FogParticles15" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(799, -104)
+
+[node name="FogParticles16" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(892, 60)
+
+[node name="FogParticles17" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(926, -124)
+
+[node name="FogParticles18" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(768, 193)
+
+[node name="FogParticles19" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(932, 221)
+
+[node name="FogParticles20" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(887, 343)
+
+[node name="FogParticles21" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(754, 491)
+
+[node name="FogParticles22" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(927, 522)
+
+[node name="FogParticles23" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(712, 318)
+
+[node name="FogParticles24" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(573, 247)
+
+[node name="FogParticles25" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(400, 267)
+
+[node name="FogParticles26" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(236, 264)
+
+[node name="FogParticles27" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(72, 318)
+
+[node name="FogParticles28" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(-64, 332)
+
+[node name="FogParticles29" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(-265, 355)
+
+[node name="FogParticles30" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(-429, 290)
+
+[node name="FogParticles31" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(-457, 168)
+
+[node name="FogParticles32" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(-556, 213)
+
+[node name="FogParticles33" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(-689, 306)
+
+[node name="FogParticles34" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(-828, 374)
+
+[node name="FogParticles35" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(-913, 465)
+
+[node name="FogParticles36" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(-743, 505)
+
+[node name="FogParticles37" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(-593, 398)
+
+[node name="FogParticles38" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(-570, 494)
+
+[node name="FogParticles39" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(-423, 446)
+
+[node name="FogParticles40" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(-293, 500)
+
+[node name="FogParticles41" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(-98, 460)
+
+[node name="FogParticles42" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(24, 466)
+
+[node name="FogParticles43" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(109, 387)
+
+[node name="FogParticles44" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(163, 492)
+
+[node name="FogParticles45" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(282, 393)
+
+[node name="FogParticles46" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(339, 486)
+
+[node name="FogParticles47" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(520, 356)
+
+[node name="FogParticles48" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(480, 506)
+
+[node name="FogParticles49" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(607, 498)
+
+[node name="FogParticles50" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(649, 416)
+
+[node name="FogParticles51" parent="Camera2D" instance=ExtResource("1_vwnpy")]
+position = Vector2(649, 416)
+rotation = 0.0238638
