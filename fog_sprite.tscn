@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bf5q0rvr8noi7"]
 
-[ext_resource type="Script" path="res://fog_sprite.gd" id="1_7yt35"]
+[ext_resource type="Script" uid="uid://e5s7d2p564oj" path="res://fog_sprite.gd" id="1_7yt35"]
 
 [sub_resource type="Gradient" id="Gradient_30o64"]
 colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1)

@@ -1,0 +1,89 @@
+[gd_scene load_steps=13 format=3 uid="uid://diniqwg4d1s7j"]
+
+[ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="2_8egsl"]
+[ext_resource type="PackedScene" uid="uid://dkc580gef7ynq" path="res://3d_fog_particles.tscn" id="2_u4ki2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3fwco"]
+albedo_color = Color(0.153544, 0.3513, 0.152521, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3fwco"]
+material = SubResource("StandardMaterial3D_3fwco")
+size = Vector2(10, 10)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_p5l5w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p5l5w"]
+albedo_color = Color(0.393086, 0.393086, 0.393085, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3fwco"]
+material = SubResource("StandardMaterial3D_p5l5w")
+size = Vector3(10, 2, 1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_p5l5w"]
+
+[sub_resource type="Sky" id="Sky_u4ki2"]
+sky_material = SubResource("ProceduralSkyMaterial_p5l5w")
+
+[sub_resource type="Environment" id="Environment_3fwco"]
+background_mode = 2
+sky = SubResource("Sky_u4ki2")
+fog_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_u4ki2"]
+
+[sub_resource type="FogMaterial" id="FogMaterial_8egsl"]
+density_texture = SubResource("NoiseTexture3D_u4ki2")
+
+[node name="3dFogTest" type="Node3D"]
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_3fwco")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_p5l5w")
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="Wall1" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -5)
+visible = false
+mesh = SubResource("BoxMesh_3fwco")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/3dFogTest")
+
+[node name="Wall2" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5, 1, 0)
+visible = false
+mesh = SubResource("BoxMesh_3fwco")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/3dFogTest")
+
+[node name="Wall3" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1, 5)
+visible = false
+mesh = SubResource("BoxMesh_3fwco")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/3dFogTest")
+
+[node name="Wall4" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -5, 1, 0)
+visible = false
+mesh = SubResource("BoxMesh_3fwco")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/3dFogTest")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_3fwco")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.5, -0.707107, 0.5, 0.5, 0.707107, 0.5, -0.707107, 0, 0.707107, 0, 0, 0)
+
+[node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+size = Vector3(10, 4, 10)
+material = SubResource("FogMaterial_8egsl")
+
+[node name="3dFogParticles" parent="." instance=ExtResource("2_u4ki2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 0)
+
+[node name="Character" parent="." instance=ExtResource("2_8egsl")]
